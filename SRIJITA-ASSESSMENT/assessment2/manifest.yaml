@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quotes   #pod name 
+  labels:
+    app: quotes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quotes
+  template:
+    metadata:
+      labels:
+        app: quotes
+    spec:
+      containers:
+      - name: quotes
+        image: srijita4/assessment:latest       #username/imagename:version
+        ports:
+        - containerPort: 5000
+
+
